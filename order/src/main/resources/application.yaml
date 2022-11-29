@@ -1,0 +1,38 @@
+server:
+  port: 8087
+
+jwt:
+  secretkey: GALAXY1456KEYROCKSSUPERMARIO123KEYS789HELPSALOTGALAXY1456KEYROCKSSUPERMARIO123KEYS789HELPSALOT
+
+galaxy:
+  url:
+    catalog: http://localhost:8083/graphql
+
+dgs:
+  graphql:
+    schema-locations:
+      - classpath*:**/common/cart-schema.graphql*
+      - classpath*:**/common/discounts-schema.graphql*
+      - classpath*:**/order/order-schema.graphql*
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  application:
+    name: order
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    metrics:
+      distributions:
+        percentiles:
+          http.server.requests: 0.5, 0.75, 0.95, 0.98, 1.0
+          method.requests: 0.5, 0.75, 0.95, 0.98, 1.0
+      tags:
+        applications: ${spring.application.name}
+

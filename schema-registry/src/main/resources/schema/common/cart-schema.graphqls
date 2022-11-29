@@ -1,0 +1,52 @@
+
+input Cart{
+    cartid : String!
+    payments:[CartPayment]
+    items :[CartItem]!
+    totalprice :Float
+}
+input CartAddress{
+    address1: String!
+    address2: String!
+    address3: String!
+    city: String!
+    state: String!
+
+}
+input CartItem{
+    skuid : String!
+    quantity :Float!
+    shipmode: String
+}
+input CartPayment{
+    paymentid: String!
+    paymenttype : String!
+    price :Float!
+}
+
+type ReturnCart{
+    cartid : String!
+    totalskuprice :Float!
+    totaldiscount :Float!
+    totalshipping :Float!
+    total :Float!
+    items: [ReturnCartItem]
+    payments:[ReturnCartPayment]
+    discounts :[Discounts]
+}
+type ReturnCartItem{
+    cartitemid:String!
+    skuid : String!
+    quantity :Float!
+    price :Float!
+    shipmode: String
+    skuprice :Float!
+    discount :Float!
+    discounts :[Discounts]
+}
+type ReturnCartPayment{
+    paymentid: String!
+    paymenttype : String!
+    price :Float!
+    discounts :[Discounts]
+}

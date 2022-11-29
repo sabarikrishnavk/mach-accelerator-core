@@ -1,0 +1,77 @@
+
+type Discounts {
+    location: String!
+    discount : Float!
+    skuid: String
+    shipmode: String
+
+    promotion: Promotion!
+}
+
+type Promotion {
+    promotionid: String!
+    promotionType: PromotionType!
+    status: PromotionStatus!
+
+    discount: Float!
+
+    stackable: Boolean!
+    rank: Int!
+    affectedskus: [String]
+
+    startdate : String!
+    enddate : String!
+
+    conditions: [PromotionCondition]!
+
+    cartdesc: String
+    pdpdesc: String
+    plpdesc: String
+    admindesc: String
+}
+
+enum PromotionType {
+
+    ORDER_PERCENT_OFF,
+    ORDER_AMOUNT_OFF,
+    ORDER_FREE_GIFT,
+
+    SHIPPING_FIXED_PRICE,
+    SHIPPING_AMOUNT_OFF,
+    SHIPPING_SKU_FIXED_PRICE,
+
+    SKU_TOTAL_PERCENT_OFF,
+    SKU_TOTAL_AMOUNT_OFF,
+    SKU_TOTAL_FIXED_PRICE,
+
+    CROSS_SKU_PERCENT_OFF,
+    CROSS_SKU_AMOUNT_OFF,
+    CROSS_SKU_FIXED_PRICE,
+
+    SKU_ITEM_PERCENT_OFF,
+    SKU_ITEM_AMOUNT_OFF,
+    SKU_ITEM_FIXED_PRICE
+}
+
+enum PromotionStatus {
+    INACTIVE,
+    ACTIVE,
+    EXPIRED
+}
+
+
+type PromotionCondition {
+    field: String!,
+    value: String!,
+    operator: Operator!
+
+}
+enum Operator{
+    NOT_EQUAL_TO ,
+    EQUAL_TO ,
+    GREATER_THAN ,
+    LESS_THAN ,
+    GREATER_THAN_OR_EQUAL_TO,
+    LESS_THAN_OR_EQUAL_TO ,
+    IN
+}

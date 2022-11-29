@@ -1,0 +1,8 @@
+type Attributes{
+    attributeid:String!
+    name : String!
+    value: String!
+    searchable: Boolean
+    promotionable: Boolean
+    itemdefining: Boolean
+}

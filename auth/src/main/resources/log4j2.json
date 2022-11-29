@@ -1,0 +1,32 @@
+{
+  "configuration": {
+    "appenders": {
+      "Console": {
+        "name": "STDOUT",
+        "JSONLayout": {
+          "compact": "true",
+          "eventEol": "true",
+          "properties": "true",
+          "objectMessageAsJsonObject": "true"
+        }
+      }
+    },
+    "loggers": {
+      "root": {
+        "level": "INFO",
+        "AppenderRef": {
+          "ref": "STDOUT"
+        }
+      },
+      "logger": [{
+        "name": "org.springframework",
+        "level": "INFO"
+      },
+        {
+          "name": "com.galaxy",
+          "level": "DEBUG"
+        }
+      ]
+    }
+  }
+}

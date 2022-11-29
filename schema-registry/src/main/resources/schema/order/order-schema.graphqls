@@ -1,0 +1,42 @@
+type Query {
+    findcart(cartid: String!  ):ReturnCart
+}
+type Mutation {
+    addcartitem(skuid:String! , quantity:Int!, fulfillment:String!) : ReturnCart
+    updatecartitem(cartitemid:String! , quantity:Int!, shipmode:String, addressid: String) : ReturnCart
+    addcartpayment(cartid:String!, paymentid:String! ) : ReturnCart
+
+    submitcart(cartid:String!): ReturnCart
+    fraudreview(cartid:String!) : ReturnOrder
+
+
+    allocateorder(cartid:String!) : ReturnOrder
+}
+
+
+type ReturnOrder{
+    orderid : String!
+    totalskuprice :Float!
+    totaldiscount :Float!
+    totalshipping :Float!
+    total :Float!
+    items: [ReturnOrderItem]
+    payments:[ReturnOrderPayment]
+    discounts :[Discounts]
+}
+type ReturnOrderItem{
+    orderitemid:String!
+    skuid : String!
+    quantity :Float!
+    price :Float!
+    skuprice :Float!
+    shipmode: String
+    discount :Float!
+    discounts :[Discounts]
+}
+type ReturnOrderPayment{
+    skuid : String!
+    quantity :Float!
+    price :Float!
+    discounts :[Discounts]
+}

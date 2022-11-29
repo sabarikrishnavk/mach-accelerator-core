@@ -1,0 +1,38 @@
+type Query {
+    skus(skuids: [String]): [Sku]
+}
+type Sku @key(fields: "skuid"){
+    skuid: String!
+    name: String!
+    price: Float!
+    listprice: Float!
+    discountprice: Float!
+    querydate: DateTime
+    shortdescription: String
+    longdescription: String
+    images: [Image]
+    attributes:[Attributes]
+}
+
+
+#
+#type Review {
+#    userId: String
+#    starScore: Int
+#    submittedDate: DateTime
+#}
+#
+#input SubmittedReview {
+#    showId: Int!
+#    userId: String!
+#    starScore: Int!
+#}
+#
+type Image {
+    imageType: String
+    url: String
+}
+
+scalar DateTime
+#scalar Upload
+#directive @skipcodegen on FIELD_DEFINITION

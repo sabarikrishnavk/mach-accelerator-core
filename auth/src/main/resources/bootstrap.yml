@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: auth
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    metrics:
+      distributions:
+        percentiles:
+          http.server.requests: 0.5, 0.75, 0.95, 0.98, 1.0
+          method.requests: 0.5, 0.75, 0.95, 0.98, 1.0
+      tags:
+        applications: ${spring.application.name}

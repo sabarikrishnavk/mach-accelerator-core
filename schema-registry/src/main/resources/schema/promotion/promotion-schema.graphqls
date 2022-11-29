@@ -1,0 +1,38 @@
+type Query {
+    discountSkusLocation(skuids: [String], location: String! ): [Discounts]
+    discountBySkus(skuids: [String]  ): [Discounts]
+}
+type Mutation {
+    evaluatePromotion(cart: Cart!): ReturnCart
+
+    addPromotion(inputPromotion: InputPromotion!): Promotion
+    updatePromotion(promotionid: InputPromotion!): Promotion
+}
+
+
+input InputPromotion {
+    promotionType: String!
+    status: String!
+
+    discount: Float!
+
+    stackable: Boolean!
+    rank: Int!
+    affectedskus: [String]
+
+    startdate : String!
+    enddate : String!
+
+    conditions: [InputPromotionCondition]!
+
+    cartdesc: String
+    pdpdesc: String
+    plpdesc: String
+    admindesc: String
+}
+input InputPromotionCondition {
+    field: String!,
+    value: String!,
+    operator: String!
+
+}
