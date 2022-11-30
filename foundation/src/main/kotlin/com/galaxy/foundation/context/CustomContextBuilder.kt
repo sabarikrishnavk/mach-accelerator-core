@@ -1,6 +1,6 @@
 package com.galaxy.foundation.context
 
-import com.galaxy.foundation.JwtUtils
+import com.galaxy.foundation.jwt.JwtUtils
 import com.galaxy.foundation.constants.*
 import com.netflix.graphql.dgs.context.DgsCustomContextBuilder
 import org.springframework.beans.factory.annotation.Autowired

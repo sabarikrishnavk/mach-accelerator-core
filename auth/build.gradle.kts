@@ -6,6 +6,7 @@ plugins {
     id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
+    id("com.netflix.dgs.codegen")
     java
     id("com.bmuschko.docker-spring-boot-application") version "6.7.0"
 }
@@ -42,9 +43,12 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.generateJava{
+    enabled= false
+}
 docker {
     springBootApplication {
-        baseImage.set("openjdk:11-jdk-slim")
+        baseImage.set("openjdk:18")
         ports.set(listOf(8081))
         images.set(setOf("galaxy-auth:1.0", "galaxy-auth:latest"))
         jvmArgs.set(listOf("-Dspring.profiles.active=production", "-Xmx2048m"))

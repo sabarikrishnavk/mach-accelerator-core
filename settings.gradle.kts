@@ -8,5 +8,5 @@
  */
 
 rootProject.name = "mach-accelerator-core"
-include ("foundation","schema-registry","catalog")
+include ("foundation","schema-registry","auth","catalog")
 //include 'application' 

@@ -1,4 +1,4 @@
-package com.galaxy.foundation
+package com.galaxy.foundation.jwt
 
 import com.galaxy.foundation.constants.*
 import com.galaxy.foundation.jwt.JwtProperties
@@ -20,7 +20,7 @@ class JwtUtils (private val jwtProperties: JwtProperties){
 
 
     fun generateAccessToken(user: JwtUser): String {
-        val role: String? = user.roles?.toString()//joinToString (",")
+        val role: String? = user.roles?.joinToString (",")
 
         val token = Jwts.builder()
             .setIssuer(JWT_ISSUER)

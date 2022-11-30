@@ -1,7 +1,7 @@
 package com.galaxy.foundation.jwt.config
 
 
-import com.galaxy.foundation.JwtUtils
+import com.galaxy.foundation.jwt.JwtUtils
 import com.galaxy.foundation.constants.HEADER_AUTH
 import com.galaxy.foundation.constants.HEADER_BEARER
 import com.galaxy.foundation.instrumentation.GraphqlTracingInstrumentation
