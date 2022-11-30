@@ -2,7 +2,7 @@
 package com.galaxy.auth.services
 
 import com.galaxy.auth.codegen.types.AuthPayload
-import com.galaxy.foundation.JwtUtils
+import com.galaxy.foundation.jwt.JwtUtils
 import com.galaxy.foundation.jwt.JwtProperties
 import com.galaxy.foundation.jwt.JwtUser
 import com.galaxy.foundation.jwt.UserType
