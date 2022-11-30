@@ -14,6 +14,10 @@ plugins {
 
    // id("com.netflix.dgs.codegen") version "4.4.3"
 }
+
+java.sourceCompatibility = JavaVersion.VERSION_18
+java.disableAutoTargetJvm()
+
 sourceSets {
     main {
         java {
@@ -26,7 +30,6 @@ sourceSets {
         }
     }
 }
-java.sourceCompatibility = JavaVersion.VERSION_18
 repositories {
     mavenCentral()
 }

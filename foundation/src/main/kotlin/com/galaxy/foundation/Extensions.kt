@@ -25,7 +25,7 @@ private fun getOrdinal(n: Int) = when {
     else -> "${n}th"
 }
 
-fun String.toSlug() = toLowerCase()
+fun String.toSlug() = lowercase()
     .replace("\n", " ")
     .replace("[^a-z\\d\\s]".toRegex(), " ")
     .split(" ")

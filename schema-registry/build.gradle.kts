@@ -204,6 +204,10 @@ open class GenerateFilesTask  @javax.inject.Inject constructor()  : DefaultTask(
 //            println("Codegen config:"+ config)
             val codegen = com.netflix.graphql.dgs.codegen.CodeGen(config)
             codegen.generate()
+
+
+
+
         }
     }
 }

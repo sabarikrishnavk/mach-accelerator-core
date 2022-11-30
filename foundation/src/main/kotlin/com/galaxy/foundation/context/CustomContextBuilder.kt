@@ -25,7 +25,7 @@ class CustomContextBuilder : DgsCustomContextBuilder<CustomContext?> {
         val location = headers?.get(HEADER_LOCATION)?.get(0) ?: DEFAULT_LOCATION
         val requestTokenHeader = headers?.get(HEADER_AUTH)?.get(0)
         if(requestTokenHeader !=null  && requestTokenHeader.startsWith(HEADER_BEARER)) {
-            val jwtToken = requestTokenHeader?.substring(7)
+            val jwtToken = requestTokenHeader.substring(7)
             val jwtUser = jwtTokenUtil?.getJwtUser(jwtToken)
             context.bearerToken = requestTokenHeader
             context.userId = jwtUser?.userId.toString() ?: DEFAULT_USER

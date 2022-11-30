@@ -101,7 +101,7 @@ class CatalogControllerTest {
     fun skusWithQueryApi() {
         val graphQLQueryRequest =
             GraphQLQueryRequest(
-                com.galaxy.catalog.codegen.client.SkusGraphQLQuery.Builder().skuids(skuids = listOf("SKU1")).build(),
+                com.galaxy.catalog.codegen.client.SkusGraphQLQuery.Builder().skuids(listOf("SKU1")).build(),
                 com.galaxy.catalog.codegen.client.SkusProjectionRoot().name()
             )
         val titles = dgsQueryExecutor.executeAndExtractJsonPath<List<String>>(
