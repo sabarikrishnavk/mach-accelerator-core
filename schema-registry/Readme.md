@@ -13,10 +13,10 @@ abstract class GenerateFilesTask : DefaultTask() {
     var rootFolder:String = "${project.projectDir}/schema/"
 
     @Input
-    var packageName = "com.galaxy.codegen"
+    var packageName = "com.pranetr.codegen"
 
 //    @Input
-//    var packageNames = mutableListOf<Any>("com.galaxy.codegen")
+//    var packageNames = mutableListOf<Any>("com.pranetr.codegen")
 
     @Input
     var subPackageNameClient = "client"

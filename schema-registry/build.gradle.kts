@@ -11,9 +11,10 @@ plugins {
     id("com.bmuschko.docker-spring-boot-application") version "6.7.0"
 }
 
-group = "com.galaxy"
+group = "com.pranetr"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_18
+val javaversion = "18"
 
 repositories {
     mavenCentral()
@@ -44,7 +45,7 @@ tasks.jar{
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "18"
+        jvmTarget = "$javaversion"
     }
 }
 tasks.withType<Test> {
@@ -59,9 +60,9 @@ tasks.withType<GenerateFilesTask> {
 //        "inventory-schema.graphqls",
 //        "price-schema.graphqls")
 //    packageNames = mutableListOf<String>(
-//        "com.galaxy.catalog.codegen",
-//        "com.galaxy.inventory.codegen",
-//        "com.galaxy.price.codegen")
+//        "com.pranetr.catalog.codegen",
+//        "com.pranetr.inventory.codegen",
+//        "com.pranetr.price.codegen")
 
     val catalog = arrayListOf<String>("attributes")
     val order = arrayListOf<String>("cart","discounts")
@@ -162,7 +163,7 @@ open class GenerateFilesTask  @javax.inject.Inject constructor()  : DefaultTask(
 
         for (projectName in projects){
 
-            val packageName = "com.galaxy.$projectName.codegen"
+            val packageName = "com.pranetr.$projectName.codegen"
             var schemaFilePath ="${project.projectDir}/src/main/resources/schema/$projectName/"
 
             var schemaFileset = HashSet<File>()

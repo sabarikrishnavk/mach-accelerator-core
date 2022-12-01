@@ -72,7 +72,7 @@ Auth API
  
 > gradle auth:dockerBuildImage
 
-> docker run -d -p 8081:8081 --name galaxy-auth-docker galaxy-auth:latest
+> docker run -d -p 8081:8081 --name pranetr-auth-docker pranetr-auth:latest
 
 
 MDM API:
@@ -81,7 +81,7 @@ MDM API:
 
 > gradle mdm:dockerBuildImage
 
-> docker run -d -p 8082:8082 --name galaxy-mdm-docker galaxy-mdm:latest
+> docker run -d -p 8082:8082 --name pranetr-mdm-docker pranetr-mdm:latest
 
 Catalog API:
 
@@ -89,7 +89,7 @@ Catalog API:
 
 > gradle catalog:dockerBuildImage
 
-> docker run -d -p 8083:8083 --name galaxy-catalog-docker galaxy-catalog:latest
+> docker run -d -p 8083:8083 --name pranetr-catalog-docker pranetr-catalog:latest
 
 Inventory API:
 
@@ -97,7 +97,7 @@ Inventory API:
 
 > gradle inventory:dockerBuildImage
 
-> docker run -d -p 8084:8084 --name galaxy-inventory-docker galaxy-inventory:latest
+> docker run -d -p 8084:8084 --name pranetr-inventory-docker pranetr-inventory:latest
 
 Price API:
 
@@ -105,7 +105,7 @@ Price API:
 
 > gradle price:dockerBuildImage
 
-> docker run -d -p 8085:8085 --name galaxy-price-docker galaxy-price:latest
+> docker run -d -p 8085:8085 --name pranetr-price-docker pranetr-price:latest
 
 Promotion API:
 
@@ -113,7 +113,7 @@ Promotion API:
 
 > gradle promotion:dockerBuildImage
 
-> docker run -d -p 8086:8086 --name galaxy-promotion-docker galaxy-promotion:latest
+> docker run -d -p 8086:8086 --name pranetr-promotion-docker pranetr-promotion:latest
 
 
 
@@ -123,6 +123,6 @@ Order API:
 
 > gradle order:dockerBuildImage
 
-> docker run -d -p 8087:8087 --name galaxy-order-docker galaxy-order:latest
+> docker run -d -p 8087:8087 --name pranetr-order-docker pranetr-order:latest
 
 

@@ -8,9 +8,10 @@ plugins {
     id("com.netflix.dgs.codegen")
 }
 
-group = "com.galaxy"
+group = "com.pranetr"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_18
+val javaversion = "18"
 
 repositories {
     mavenCentral()
@@ -59,7 +60,7 @@ tasks.generateJava{
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "18"
+        jvmTarget = "$javaversion"
     }
 }
 

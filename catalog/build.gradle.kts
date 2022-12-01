@@ -11,13 +11,15 @@ plugins {
     id("com.bmuschko.docker-spring-boot-application") version "6.7.0"
 }
 
-group = "com.galaxy"
+group = "com.pranetr"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_18
+val javaversion = "18"
+val module = "catalog"
+val port = 8083
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 configurations {
@@ -40,7 +42,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "18"
+        jvmTarget = "$javaversion"
     }
 }
 tasks.withType<Test> {
@@ -52,9 +54,9 @@ tasks.generateJava{
 }
 docker {
     springBootApplication {
-        baseImage.set("openjdk:18")
-        ports.set(listOf(8083))
-        images.set(setOf("galaxy-catalog:1.0", "galaxy-catalog:latest"))
+        baseImage.set("openjdk:$javaversion")
+        ports.set(listOf(port))
+        images.set(setOf("pranetr-$module:$version", "pranetr-$module:latest"))
         jvmArgs.set(listOf("-Dspring.profiles.active=production", "-Xmx2048m"))
     }
 }
